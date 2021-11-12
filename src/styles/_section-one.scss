@@ -1,0 +1,165 @@
+$primary: #ee7333;
+$primaryHover: #e0601a;
+$primaryHover2: #fca779;
+
+$small-width: 480px;
+$medium-width: 768px;
+$large-width: 1280px;
+
+@mixin extra-small {
+  @media (max-width: #{$small-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-down {
+  @media (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-only {
+  @media (min-width: #{$small-width}) and (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-up {
+  @media (min-width: #{$small-width}) {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin large-down {
+  @media (max-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin button {
+  padding: 16px 32px;
+  border-radius: 50vh;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: montserrat;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include small-down {
+    width: 100%;
+  }
+}
+
+.section-one {
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: center;
+
+  @include small-down {
+    margin: 60px auto 0;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    height: 700px;
+    width: 87%;
+  }
+}
+
+.section-one-text {
+  border: none;
+  width: 750px;
+  position: relative;
+
+  h1 {
+    font-size: 72px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    @include small-down {
+      padding-left: 0px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+  h3 {
+    font-size: 22px;
+    padding-left: 10px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.6);
+    width: 80%;
+    margin-bottom: 50px;
+    @include small-down {
+      padding-left: 0px;
+      font-size: 16px;
+      font-weight: 700;
+      width: 100%;
+    }
+  }
+
+  @include small-down {
+    margin-top: 40px;
+    width: 100%;
+  }
+}
+
+.button-reservar {
+  @include button;
+  border: 1px solid $primary;
+  background: $primary;
+  color: white;
+  margin-right: 20px;
+  margin-left: 10px;
+
+  @include small-down {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.button-reservar:hover {
+  border: 1px solid $primaryHover;
+  background: $primaryHover;
+}
+
+.button-saber-mas {
+  @include button;
+  border: 1px solid $primary;
+  background: none;
+  color: $primary;
+  font-family: montserrat;
+}
+
+.button-saber-mas:hover {
+  border: 1px solid $primaryHover2;
+  color: $primaryHover2;
+}
+
+.section-one-image {
+  border: none;
+  width: 550px;
+  position: relative;
+
+  img {
+    position: static;
+    width: 100%;
+  }
+
+  @include small-down {
+    width: 100%;
+  }
+}

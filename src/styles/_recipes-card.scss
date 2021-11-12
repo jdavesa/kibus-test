@@ -1,0 +1,152 @@
+$primary: #ee7333;
+$primaryHover: #e0601a;
+$primaryHover2: #fca779;
+
+$small-width: 480px;
+$medium-width: 768px;
+$large-width: 1280px;
+
+@mixin extra-small {
+  @media (max-width: #{$small-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-down {
+  @media (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-only {
+  @media (min-width: #{$small-width}) and (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-up {
+  @media (min-width: #{$small-width}) {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin large-down {
+  @media (max-width: #{$large-width}) {
+    @content;
+  }
+}
+
+.recipes-container{
+  @include large-down {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 80px 6%;
+  }
+}
+
+.recipes-container::-webkit-scrollbar { display: none; }
+
+
+.recipes-card {
+  background-color: white;
+  width: 1281px;
+  height: 462px;
+  border-radius: 20px;
+  box-shadow: 0px 14px 37px 19px rgba(0, 0, 0, 0.04);
+  margin: 120px auto 0;
+
+  @include large-down {
+    
+
+  }
+}
+.recipes-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  @include large-down {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+.recipe-card {
+  width: 17%;
+  text-align: center;
+  @include large-down {
+    display: inline-block;
+    padding: 30px;
+    width: 300px;
+    height: 80%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 80%;
+    margin: auto;
+    @include large-down {
+      white-space: normal;
+      width: 100%;
+    }
+  }
+
+  h3 {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    @include large-down {
+    white-space: normal;}
+  }
+
+  p {
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #767676;
+    @include large-down {
+      white-space: normal;}
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: none;
+    background: #d5dbe1;
+    border-radius: 50vh;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    @include large-down {
+      font-size: 12px;
+    }
+  }
+  button:hover {
+    background-color: black;
+  }
+}

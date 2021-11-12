@@ -1,0 +1,109 @@
+$primary: #ee7333;
+$primaryHover: #e0601a;
+$primaryHover2: #fca779;
+
+$small-width: 480px;
+$medium-width: 768px;
+$large-width: 1280px;
+
+@mixin extra-small {
+  @media (max-width: #{$small-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-down {
+  @media (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-only {
+  @media (min-width: #{$small-width}) and (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-up {
+  @media (min-width: #{$small-width}) {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin large-down {
+  @media (max-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin button {
+  padding: 16px 32px;
+  border-radius: 50vh;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: montserrat;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.section-three {
+  width: 1281px;
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include small-down {
+    width: 100%;
+  }
+
+  ul {
+    list-style: none;
+    width: 30%;
+    margin-top: 50px;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+
+      img {
+        width: 42px;
+        height: auto;
+      }
+
+      h3 {
+        margin-top: 15px;
+        margin-left: 20px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  div {
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

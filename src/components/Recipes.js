@@ -2,6 +2,7 @@ import { RightOutlined } from "@ant-design/icons";
 
 function RecipesCard() {
   return (
+    <div className="recipes-container">
     <div className="recipes-card">
       <div className="recipe-card">
         <img
@@ -35,6 +36,7 @@ function RecipesCard() {
         <button>Tu Receta<RightOutlined style={{marginLeft :'5px'}}/></button>
         <p>Ayúdanos a decidir nuestra nueva receta</p>
       </div>
+    </div>
     </div>
   );
 }
