@@ -85,6 +85,9 @@ body{
 
 .home-page{
   height: 2950px;
+  @include small-down {
+    height: 3900px;
+  }
 }
 
 .nav-logo{

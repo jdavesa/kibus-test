@@ -30,13 +30,13 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <a>
+          <a href="https://www.facebook.com/" style={{color: 'white'}}>
             <FacebookOutlined />
           </a>
-          <a>
+          <a href="https://www.instagram.com/" style={{color: 'white'}}>
             <InstagramOutlined />
           </a>
-          <a>
+          <a href="https://www.youtube.com/" style={{color: 'white'}}>
             <YoutubeOutlined />
           </a>
         </div>

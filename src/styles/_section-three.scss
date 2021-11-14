@@ -73,17 +73,28 @@ $large-width: 1280px;
   align-items: center;
   @include small-down {
     width: 100%;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
   }
 
   ul {
     list-style: none;
     width: 30%;
     margin-top: 50px;
+    @include small-down {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     li {
       display: flex;
       align-items: center;
       margin-bottom: 40px;
+      @include small-down {
+        flex-direction: column;
+        text-align: center;
+      }
 
       img {
         width: 42px;
@@ -95,12 +106,19 @@ $large-width: 1280px;
         margin-left: 20px;
         font-size: 16px;
         font-weight: 600;
+        @include small-down {
+          width: 150px;
+          margin-left: 0;
+        }
       }
     }
   }
 
   div {
     width: 50%;
+    @include small-down {
+      width:87%;
+    }
 
     img {
       width: 100%;

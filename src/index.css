@@ -12001,6 +12001,12 @@ fieldset:disabled .btn {
   margin: 120px auto 0;
 }
 
+@media (max-width: 767px) {
+  .recipes-card {
+    margin: 0px auto 80px;
+  }
+}
+
 .recipes-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12364,6 +12370,13 @@ fieldset:disabled .btn {
 @media (max-width: 767px) {
   .section-three {
     width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -12371,6 +12384,17 @@ fieldset:disabled .btn {
   list-style: none;
   width: 30%;
   margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .section-three ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .section-three ul li {
@@ -12381,6 +12405,16 @@ fieldset:disabled .btn {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .section-three ul li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
 }
 
 .section-three ul li img {
@@ -12395,8 +12429,21 @@ fieldset:disabled .btn {
   font-weight: 600;
 }
 
+@media (max-width: 767px) {
+  .section-three ul li h3, .section-three ul li .h3 {
+    width: 150px;
+    margin-left: 0;
+  }
+}
+
 .section-three div {
   width: 50%;
+}
+
+@media (max-width: 767px) {
+  .section-three div {
+    width: 87%;
+  }
 }
 
 .section-three div img {
@@ -12411,6 +12458,13 @@ footer {
   padding-top: 50px;
 }
 
+@media (max-width: 767px) {
+  footer {
+    height: 1000px !important;
+    padding-top: 80px !important;
+  }
+}
+
 footer .footer-icon {
   width: 100%;
   margin: auto;
@@ -12419,6 +12473,13 @@ footer .footer-icon {
 @media (min-width: 1280px) {
   footer .footer-icon {
     width: 1200px;
+  }
+}
+
+@media (max-width: 767px) {
+  footer .footer-icon {
+    width: 87% !important;
+    margin: auto;
   }
 }
 
@@ -12443,8 +12504,25 @@ footer .footer-info {
   }
 }
 
+@media (max-width: 767px) {
+  footer .footer-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 footer .footer-info div {
   width: 20%;
+}
+
+@media (max-width: 767px) {
+  footer .footer-info div {
+    width: 87% !important;
+    margin: auto;
+    margin-bottom: 50px;
+  }
 }
 
 footer .footer-info div h2, footer .footer-info div .h2 {
@@ -12452,9 +12530,22 @@ footer .footer-info div h2, footer .footer-info div .h2 {
   font-weight: 700;
 }
 
+@media (max-width: 767px) {
+  footer .footer-info div h2, footer .footer-info div .h2 {
+    font-size: 16px !important;
+    margin-bottom: 20px;
+  }
+}
+
 footer .footer-info div p {
   font-size: 16px;
   font-weight: 200;
+}
+
+@media (max-width: 767px) {
+  footer .footer-info div p {
+    font-weight: 400 !important;
+  }
 }
 
 footer .footer-info div a {
@@ -12475,8 +12566,20 @@ footer .footer-info div ul li {
   margin-bottom: 20px;
 }
 
+@media (max-width: 767px) {
+  footer .footer-info div ul li {
+    font-weight: 400 !important;
+  }
+}
+
 footer .footer-info div img {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  footer .footer-info div img {
+    width: 80% !important;
+  }
 }
 
 body {
@@ -12496,6 +12599,12 @@ body {
 
 .home-page {
   height: 2950px;
+}
+
+@media (max-width: 767px) {
+  .home-page {
+    height: 3900px;
+  }
 }
 
 .nav-logo {

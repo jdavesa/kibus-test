@@ -70,12 +70,21 @@ footer{
     height: 350px;
     margin-top: 50px;
     padding-top: 50px;
+
+    @include small-down {
+      height: 1000px!important;
+      padding-top: 80px!important;
+    }
   
     .footer-icon{
       width: 100%;
       margin: auto;
       @include large{
         width: 1200px;
+      }
+      @include small-down {
+        width: 87%!important;
+        margin: auto;
       }
       img{
         width: 44px;
@@ -91,18 +100,33 @@ footer{
       @include large{
         width: 1200px;
       }
+      @include small-down {
+        flex-direction: column;
+      }
   
       div{
         width: 20%;
+        @include small-down {
+          width: 87%!important;
+          margin: auto;
+          margin-bottom: 50px;
+        }
   
         h2{
           font-size: 22px;
           font-weight: 700;
+          @include small-down {
+            font-size: 16px !important;
+            margin-bottom: 20px;
+          }
         }
   
         p{
           font-size: 16px;
           font-weight: 200;
+          @include small-down {
+            font-weight: 400!important;
+          }
         }
   
         a{
@@ -119,11 +143,17 @@ footer{
             font-size: 16px;
             font-weight: 200;
             margin-bottom: 20px;
+            @include small-down {
+              font-weight: 400!important;
+            }
           }
         }
   
         img{
           width: 100%;
+          @include small-down {
+            width: 80% !important;
+          }
         }
       }
       

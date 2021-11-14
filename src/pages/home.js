@@ -1,17 +1,35 @@
+import {useState, useEffect} from 'react'
 import kibusLogo from "../images/kibus-logo.svg";
 import { RightCircleOutlined } from "@ant-design/icons";
 import RecipesCard from "../components/Recipes";
 import CarouselElement from "../components/Carousel";
-import Footer from '../components/Footor'
+import Footer from "../components/Footor";
 import icon1 from "../images/icons/icon-1.png";
 import icon2 from "../images/icons/icon-2.png";
 import icon3 from "../images/icons/icon-3.png";
 import icon4 from "../images/icons/icon-4.png";
 import icon5 from "../images/icons/icon-5.png";
 import icon6 from "../images/icons/icon-6.png";
-import kibusProduct from "../images/kibus-product.png"
+import kibusProduct from "../images/kibus-product.png";
+import kibusProductMobile from "../images/dispositivo.png";
 
-function home() {
+function Home() {
+  const [offsetY, setOffsetY] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+  const handleSize = () => setWindowWidth(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.addEventLinstener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleSize);
+    return () => window.addEventListener("resize", handleSize);
+  }, []);
+
   return (
     <div className="home-page">
       <div className="nav-logo">
@@ -103,12 +121,12 @@ function home() {
           </li>
         </ul>
         <div>
-          <img src={kibusProduct} alt="kibus-producto" />
+          <img src={windowWidth > 768 ? kibusProduct : kibusProductMobile} alt="kibus-producto" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
 
-export default home;
+export default Home;

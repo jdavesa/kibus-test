@@ -74,8 +74,8 @@ $large-width: 1280px;
   box-shadow: 0px 14px 37px 19px rgba(0, 0, 0, 0.04);
   margin: 120px auto 0;
 
-  @include large-down {
-    
+  @include small-down {
+    margin: 0px auto 80px;
 
   }
 }
