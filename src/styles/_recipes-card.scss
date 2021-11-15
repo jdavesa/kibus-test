@@ -54,17 +54,20 @@ $large-width: 1280px;
   }
 }
 
-.recipes-container{
-  @include large-down {
+.recipes-container {
+  margin-top: 300px;
+  @include small-down {
     width: 100%;
     overflow: auto;
     white-space: nowrap;
     padding: 80px 6%;
+    margin-top: 0px;
   }
 }
 
-.recipes-container::-webkit-scrollbar { display: none; }
-
+.recipes-container::-webkit-scrollbar {
+  display: none;
+}
 
 .recipes-card {
   background-color: white;
@@ -76,7 +79,6 @@ $large-width: 1280px;
 
   @include small-down {
     margin: 0px auto 80px;
-
   }
 }
 .recipes-card {
@@ -118,7 +120,8 @@ $large-width: 1280px;
     font-weight: 700;
     font-size: 22px;
     @include large-down {
-    white-space: normal;}
+      white-space: normal;
+    }
   }
 
   p {
@@ -127,7 +130,8 @@ $large-width: 1280px;
     font-size: 16px;
     color: #767676;
     @include large-down {
-      white-space: normal;}
+      white-space: normal;
+    }
   }
 
   button {

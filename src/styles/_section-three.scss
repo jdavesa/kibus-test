@@ -68,6 +68,7 @@ $large-width: 1280px;
   width: 1281px;
   margin: auto;
   margin-top: 150px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +76,7 @@ $large-width: 1280px;
     width: 100%;
     flex-direction: column-reverse;
     justify-content: flex-end;
+    margin-bottom: 0px;
   }
 
   ul {
@@ -116,8 +118,11 @@ $large-width: 1280px;
 
   div {
     width: 50%;
+    margin-top: 0px;
     @include small-down {
-      width:87%;
+      width: 87%;
+      margin-top: 0px;
+      margin-bottom: 50px;
     }
 
     img {

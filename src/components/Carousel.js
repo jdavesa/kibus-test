@@ -13,24 +13,20 @@ function CarouselElement() {
   };
 
   return (
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item>
-          <img className="d-block w-100" src={carouselOne} alt="First slide" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={carouselTwo} alt="Second slide" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={carouselThree}
-            alt="Third slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={carouselFour} alt="Four slide" />
-        </Carousel.Item>
-      </Carousel>
+    <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <img className="d-block w-100" src={carouselOne} alt="First slide" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={carouselTwo} alt="Second slide" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={carouselThree} alt="Third slide" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={carouselFour} alt="Four slide" />
+      </Carousel.Item>
+    </Carousel>
   );
 }
 

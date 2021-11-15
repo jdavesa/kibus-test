@@ -11978,12 +11978,17 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1280px) {
+.recipes-container {
+  margin-top: 300px;
+}
+
+@media (max-width: 767px) {
   .recipes-container {
     width: 100%;
     overflow: auto;
     white-space: nowrap;
     padding: 80px 6%;
+    margin-top: 0px;
   }
 }
 
@@ -12356,6 +12361,7 @@ fieldset:disabled .btn {
   width: 1281px;
   margin: auto;
   margin-top: 150px;
+  margin-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12377,6 +12383,7 @@ fieldset:disabled .btn {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    margin-bottom: 0px;
   }
 }
 
@@ -12438,11 +12445,14 @@ fieldset:disabled .btn {
 
 .section-three div {
   width: 50%;
+  margin-top: 0px;
 }
 
 @media (max-width: 767px) {
   .section-three div {
     width: 87%;
+    margin-top: 0px;
+    margin-bottom: 50px;
   }
 }
 
@@ -12598,12 +12608,12 @@ body {
 }
 
 .home-page {
-  height: 2950px;
+  height: 3200px;
 }
 
 @media (max-width: 767px) {
   .home-page {
-    height: 3900px;
+    height: 4000px;
   }
 }
 

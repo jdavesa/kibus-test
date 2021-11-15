@@ -1,8 +1,9 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 import kibusLogo from "../images/kibus-logo.svg";
 import { RightCircleOutlined } from "@ant-design/icons";
 import RecipesCard from "../components/Recipes";
 import CarouselElement from "../components/Carousel";
+import Fade from "react-reveal/Fade";
 import Footer from "../components/Footor";
 import icon1 from "../images/icons/icon-1.png";
 import icon2 from "../images/icons/icon-2.png";
@@ -32,66 +33,86 @@ function Home() {
 
   return (
     <div className="home-page">
-      <div className="nav-logo">
-        <img className="kibus-logo" src={kibusLogo} alt="kibus-logo" />
-      </div>
-      <div className="section-one">
-        <div className="section-one-text">
-          <h1>
-            Alimentar bien a tu perro es más fácil que nunca
-            <span style={{ color: "#EE7333" }}>.</span>
-          </h1>
-          <h3>
-            La nueva alimentación canina ha llegado. Con Kibus, podrás ofrecer a
-            tu compañero comida sana, rica y recién cocinada de una forma fácil
-            y cómoda.
-          </h3>
-          <button className="button-reservar">Reservar Ahora</button>
-          <button className="button-saber-mas">
-            Quiero Saber Más
-            <RightCircleOutlined
-              style={{
-                marginLeft: "10px",
-                verticalAlign: "middle",
-                marginBottom: "3px",
-              }}
-            />
-          </button>
+      <Fade>
+        <div className="nav-logo">
+          <img className="kibus-logo" src={kibusLogo} alt="kibus-logo" />
         </div>
+      </Fade>
+      <div
+        className="section-one"
+        style={{
+          transform:
+            windowWidth > 768 ? `translateY(${offsetY * 0.2}px)` : "none",
+        }}
+      >
+        <Fade left>
+          <div className="section-one-text">
+            <h1>
+              Alimentar bien a tu perro es más fácil que nunca
+              <span style={{ color: "#EE7333" }}>.</span>
+            </h1>
+            <h3>
+              La nueva alimentación canina ha llegado. Con Kibus, podrás ofrecer
+              a tu compañero comida sana, rica y recién cocinada de una forma
+              fácil y cómoda.
+            </h3>
+            <button className="button-reservar">Reservar Ahora</button>
+            <button className="button-saber-mas">
+              Quiero Saber Más
+              <RightCircleOutlined
+                style={{
+                  marginLeft: "10px",
+                  verticalAlign: "middle",
+                  marginBottom: "3px",
+                }}
+              />
+            </button>
+          </div>
+        </Fade>
         <div className="section-one-image">
-          <img
-            src="https://www.kibuspetcare.com/wp-content/uploads/2021/03/cabecera-kibus.png"
-            alt="section-one-dog"
-          />
+          <Fade>
+            <img
+              src="https://www.kibuspetcare.com/wp-content/uploads/2021/03/cabecera-kibus.png"
+              alt="section-one-dog"
+            />
+          </Fade>
         </div>
       </div>
-      <RecipesCard />
+      {windowWidth < 768 ? (
+        <Fade right>
+          <RecipesCard />
+        </Fade>
+      ) : (
+        <RecipesCard />
+      )}
       <div className="section-two">
         <div className="carousel-element">
           <CarouselElement />
         </div>
-        <div className="section-two-text">
-          <h3>Mejor para ellos, más fácil y cómodo para ti</h3>
-          <p>
-            Con Kibus, nunca tendrás que preocuparte de cómo ofrecer una dieta
-            sana y natural a tu perro de forma cómoda y rápida. Nuestro
-            dispositivo cocina automáticamente la cantidad exacta en cada comida
-            e incluso lo puedes programar a través de la app. Tu perro
-            disfrutará comida de casera de primera calidad, con el mínimo
-            esfuerzo.
-          </p>
-          <button className="button-reservar">Reservar Ahora</button>
-          <button className="button-saber-mas">
-            Quiero Saber Más
-            <RightCircleOutlined
-              style={{
-                marginLeft: "10px",
-                verticalAlign: "middle",
-                marginBottom: "3px",
-              }}
-            />
-          </button>
-        </div>
+        <Fade right>
+          <div className="section-two-text">
+            <h3>Mejor para ellos, más fácil y cómodo para ti</h3>
+            <p>
+              Con Kibus, nunca tendrás que preocuparte de cómo ofrecer una dieta
+              sana y natural a tu perro de forma cómoda y rápida. Nuestro
+              dispositivo cocina automáticamente la cantidad exacta en cada
+              comida e incluso lo puedes programar a través de la app. Tu perro
+              disfrutará comida de casera de primera calidad, con el mínimo
+              esfuerzo.
+            </p>
+            <button className="button-reservar">Reservar Ahora</button>
+            <button className="button-saber-mas">
+              Quiero Saber Más
+              <RightCircleOutlined
+                style={{
+                  marginLeft: "10px",
+                  verticalAlign: "middle",
+                  marginBottom: "3px",
+                }}
+              />
+            </button>
+          </div>
+        </Fade>
       </div>
       <div className="section-three">
         <ul>
@@ -121,7 +142,10 @@ function Home() {
           </li>
         </ul>
         <div>
-          <img src={windowWidth > 768 ? kibusProduct : kibusProductMobile} alt="kibus-producto" />
+          <img
+            src={windowWidth > 768 ? kibusProduct : kibusProductMobile}
+            alt="kibus-producto"
+          />
         </div>
       </div>
       <Footer />
